@@ -32,8 +32,10 @@ const Preferences = DataBase.define("preferences", {
   distance: { type: DataTypes.FLOAT },
 });
 
-const Likes = DataBase.define("likes", {
+const News = DataBase.define("news", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  name: { type: DataTypes.STRING },
+  description: { type: DataTypes.STRING },
 });
 
 User.hasOne(Basket);
@@ -45,7 +47,4 @@ Messages.belongsTo(User);
 User.hasMany(Preferences);
 Preferences.belongsTo(User);
 
-User.hasMany(Likes);
-Likes.belongsTo(User);
-
-export { User, Basket, Messages, Preferences, Likes };
+export { User, Basket, Messages, Preferences, News };
