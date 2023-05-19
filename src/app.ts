@@ -4,12 +4,17 @@ import express from "express";
 import dotenv from "dotenv";
 import logger from "./logger";
 import DataBase from "./database/database";
+import routes from "./routes/routers";
 
 dotenv.config();
 
 const app = express();
 
 const PORT: number = +process.env.PORT;
+
+app.use(express.json());
+
+app.use("/api", routes);
 
 logger.error("error");
 logger.info("info");

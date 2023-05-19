@@ -44,9 +44,12 @@ var express_1 = __importDefault(require("express"));
 var dotenv_1 = __importDefault(require("dotenv"));
 var logger_1 = __importDefault(require("./logger"));
 var database_1 = __importDefault(require("./database/database"));
+var routers_1 = __importDefault(require("./routes/routers"));
 dotenv_1.default.config();
 var app = (0, express_1.default)();
 var PORT = +process.env.PORT;
+app.use(express_1.default.json());
+app.use("/api", routers_1.default);
 logger_1.default.error("error");
 logger_1.default.info("info");
 var start = function () { return __awaiter(void 0, void 0, void 0, function () {

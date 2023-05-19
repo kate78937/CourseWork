@@ -20,6 +20,7 @@ const Basket = DataBase.define("basket", {
 
 const Messages = DataBase.define("messages", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  userIdsend: { type: DataTypes.INTEGER },
   messages: { type: DataTypes.STRING },
 });
 
@@ -28,7 +29,7 @@ const Preferences = DataBase.define("preferences", {
   Agefrom: { type: DataTypes.STRING },
   Ageupto: { type: DataTypes.STRING },
   mail: { type: DataTypes.STRING },
-  Distance: { type: DataTypes.FLOAT },
+  distance: { type: DataTypes.FLOAT },
 });
 
 const Likes = DataBase.define("likes", {
